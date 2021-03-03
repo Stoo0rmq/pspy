@@ -32,6 +32,20 @@ If size is an issue, try the smaller versions which depend on libc and are compr
 ### Build
 
 Either use Go installed on your system or run the Docker-based build process which ran to create the release.
+
+To build using Go, the following requisite is needed:
+```
+apt install golang
+```
+Once Go is  installed move to the pspy/ folder and use the following commands:
+```
+go mod init github.com/DominicBreuker/pspy 
+go mod tidy
+go mod vendor
+go build
+```
+Tha will generate a *pspy* binary
+
 For the latter, ensure Docker is installed, and then run `make build-build-image` to build a Docker image, followed by `make build` to build the binaries with it.
 
 You can run `pspy --help` to learn about the flags and their meaning.
